@@ -1,4 +1,4 @@
-#Microsserviços Aplicados em Robótica Autonoma Móvel
+# Microsserviços Aplicados em Robótica Autonoma Móvel
 
 O documento em questão descreve os passos necessários para executar a aplicação Web (inicializando os servidores HTTP) referente ao projeto de iniciação tecnológica. 
 
@@ -10,22 +10,22 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
   * 16 GB de memória RAM 
   * 128 GB de armazenamento
 ****
-##Requisitos de software
+## Requisitos de software
 É recomendado que os softwares utilizados estejam em sua versão mais recente, porém vou deixar na seção de cada software a versão utilizada na execução dessa aplicação.
 
 |  Nome do software| Versão Utilizada| Instruções                                                                                                                                                                           |
 |------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       **git** |      2.34.1     |Para que se verifique a versão é utilizado o comando `git --version`, caso seja mostrado algo como `command not found`, significa que o git não está instalado, para instala-lo siga o [passo-a-passo do git](###Guia Git).|
-|   **kubectl** |    1.32.4       |Para verificação basta executar o comando  'kubectl version --client' no terminal. O retorno esperado é  algo como `Client Version: v1.32.4 Kustomize Version: v5.5.0`. Caso retorne algo como `Command 'kubectl' not found`, significa que não está instalado, para instala-lo siga o [passo-a-passo do kubectl](###Guia Kubectl).                         |
-|     **Docker**|   26.1.3        |Para verificação, utilizar o comando `docker --version` no terminal, a saída esperada para esse comando é algo parecido com `Docker version 26.1.3, build 26.1.3-0ubuntu1~22.04.1`. Caso seja mostrado algo como `Command 'docker' not found`, significa que o software não está instalado. Para instala-lo siga os passos do [guia de instalação Docker](###Guia Docker).|
-|      **k3d**|   5.8.3         |Para verificação, utilizar o comando `k3d version` no terminal, a saída esperada para este comando é  algo parecido com `k3d version v5.8.3 k3s version v1.31.5-k3s1 (default)`, caso seja mostrado `Command 'k3d' not found`, significa que o software não está instalado, portanto, para instala-lo siga os passos do [guia de instalação k3d](###Guia k3d).|
+|       **git** |      2.34.1     |Para que se verifique a versão é utilizado o comando `git --version`, caso seja mostrado algo como `command not found`, significa que o git não está instalado, para instala-lo siga o [passo-a-passo do git](#Guia Git).|
+|   **kubectl** |    1.32.4       |Para verificação basta executar o comando  'kubectl version --client' no terminal. O retorno esperado é  algo como `Client Version: v1.32.4 Kustomize Version: v5.5.0`. Caso retorne algo como `Command 'kubectl' not found`, significa que não está instalado, para instala-lo siga o [passo-a-passo do kubectl](#Guia Kubectl).                         |
+|     **Docker**|   26.1.3        |Para verificação, utilizar o comando `docker --version` no terminal, a saída esperada para esse comando é algo parecido com `Docker version 26.1.3, build 26.1.3-0ubuntu1~22.04.1`. Caso seja mostrado algo como `Command 'docker' not found`, significa que o software não está instalado. Para instala-lo siga os passos do [guia de instalação Docker](#Guia Docker).|
+|      **k3d**|   5.8.3         |Para verificação, utilizar o comando `k3d version` no terminal, a saída esperada para este comando é  algo parecido com `k3d version v5.8.3 k3s version v1.31.5-k3s1 (default)`, caso seja mostrado `Command 'k3d' not found`, significa que o software não está instalado, portanto, para instala-lo siga os passos do [guia de instalação k3d](#Guia k3d).|
 
 
 
 ****
-##Guias de instalação dos software de requisito
+## Guias de instalação dos software de requisito
 
-###Guia Git
+### Guia Git
 
 1. **Atualizar lista de pacotes**  
    ```bash
@@ -40,7 +40,7 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
    ```bash
    git --version
    ```  
-###Guia Kubectl
+### Guia Kubectl
 
 1. **Instalar dependências para repositório APT**  
    ```bash
@@ -74,7 +74,7 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
    kubectl version --client --short
    ```  
 
-###Guia Docker
+### Guia Docker
 
 1. **Remover versões antigas (se houver)**  
    ```bash
@@ -125,7 +125,7 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
    sudo systemctl status docker
    ```
 
-###Guia k3d
+### Guia k3d
 
 1. **Pré-requisito: ter Docker instalado e em execução**  
    ```bash
@@ -143,7 +143,7 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
    k3d version
    ```  
 ---
-##Execução da aplicação
+## Execução da aplicação
 Com todos os softwares de pré-requisito devidamente instalados, para a execução da aplicação em si basta seguir os passos:
 
 1. **Clonar o repositório GitHub**  

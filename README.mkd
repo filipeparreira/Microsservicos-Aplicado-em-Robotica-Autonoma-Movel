@@ -9,6 +9,8 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
   * OCPU de 2 núcleos 
   * 16 GB de memória RAM 
   * 128 GB de armazenamento
+
+Para execução correta do mesmo as portas **9966** e **5000** devem estar habilitas e livres, permitindo então que os serviços utilizem essas portas. 
 ****
 ## Requisitos de software
 É recomendado que os softwares utilizados estejam em sua versão mais recente, porém vou deixar na seção de cada software a versão utilizada na execução dessa aplicação.

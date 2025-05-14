@@ -21,6 +21,26 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
 |      **k3d**|   5.8.3         |Para verificação, utilizar o comando `k3d version` no terminal, a saída esperada para este comando é  algo parecido com `k3d version v5.8.3 k3s version v1.31.5-k3s1 (default)`, caso seja mostrado `Command 'k3d' not found`, significa que o software não está instalado, portanto, para instala-lo siga os passos do [guia de instalação k3d](#guia-k3d).|
 
 
+---
+## Execução da aplicação
+Com todos os softwares de pré-requisito devidamente instalados, para a execução da aplicação em si basta seguir os passos:
+
+1. **Clonar o repositório GitHub**  
+   ```bash
+   git clone https://github.com/filipeparreira/Microsservicos-Aplicado-em-Robotica-Autonoma-Movel
+   ```  
+
+2. **Criar o cluster k3d, mapeando as portas que os serviços utilizam (5000, 9966), substitua o nome do cluster por um de sua escolha**  
+   ```bash
+   k3d cluster create {Nome do cluster} -p "5000:5000@loadbalancer" -p "9966:9966@loadbalancer"
+   ```  
+
+3. **Criar os serviços por meio do arquivo de configuração (YAML) presente no repositório**  
+   ```bash
+   kubectl create -f configuracao_servicos.yaml
+   ```  
+
+4. **Para acessar a página web basta utilizar o endereço `localhost:9966`**  
 
 ****
 ## Guias de instalação dos software de requisito
@@ -120,26 +140,6 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
    ```bash
    k3d version
    ```  
----
-## Execução da aplicação
-Com todos os softwares de pré-requisito devidamente instalados, para a execução da aplicação em si basta seguir os passos:
-
-1. **Clonar o repositório GitHub**  
-   ```bash
-   git clone https://github.com/filipeparreira/Microsservicos-Aplicado-em-Robotica-Autonoma-Movel
-   ```  
-
-2. **Criar o cluster k3d, mapeando as portas que os serviços utilizam (5000, 9966), substitua o nome do cluster por um de sua escolha**  
-   ```bash
-   k3d cluster create {Nome do cluster} -p "5000:5000@loadbalancer" -p "9966:9966@loadbalancer"
-   ```  
-
-3. **Criar os serviços por meio do arquivo de configuração (YAML) presente no repositório**  
-   ```bash
-   kubectl create -f configuracao_servicos.yaml
-   ```  
-
-4. **Para acessar a página web basta utilizar o endereço `localhost:9966`**  
 
 
 

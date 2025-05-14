@@ -49,7 +49,7 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
 
 5. **Verificar versão**  
    ```bash
-   kubectl version --client --short
+   kubectl version --client
    ```  
 
 ### Guia Docker

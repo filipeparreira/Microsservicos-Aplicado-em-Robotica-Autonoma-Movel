@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: osrm-sul
-          image: filipeparreira/osrm-sul:front
+          image: filipeparreira/osrm-sul:frontFinal
           ports:
             - containerPort: 9966
 ---

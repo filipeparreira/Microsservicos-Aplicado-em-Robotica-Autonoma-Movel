@@ -42,31 +42,9 @@ Com relação a aplicação web em si, é adotado como base o [projeto OSRM](htt
    ```  
 ### Guia Kubectl
 
-1. **Instalar dependências para repositório APT**  
+1. **Instalar via SNAP**  
    ```bash
-   sudo apt update
-   sudo apt install -y apt-transport-https ca-certificates curl
-   ```
-
-2. **Adicionar chave GPG do repositório Kubernetes**  
-   ```bash
-   sudo curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
-     | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
-   sudo chmod 644 /etc/apt/keyrings/kubernetes-archive-keyring.gpg
-   ```
-
-3. **Adicionar repositório kubectl**  
-   ```bash
-   echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] \
-     https://apt.kubernetes.io/ kubernetes-xenial main" \
-     | sudo tee /etc/apt/sources.list.d/kubernetes.list
-   sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list
-   ```
-
-4. **Instalar o cliente kubectl**  
-   ```bash
-   sudo apt update
-   sudo apt install -y kubectl
+   sudo snap install kubectl --classic
    ```
 
 5. **Verificar versão**  

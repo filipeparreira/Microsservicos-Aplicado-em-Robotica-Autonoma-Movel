@@ -37,7 +37,7 @@ Com todos os softwares de pré-requisito devidamente instalados, para a execuç�
 
 3. **Criar os serviços por meio do arquivo de configuração (YAML) presente no repositório**  
    ```bash
-   kubectl create -f configuracao_servicos.yaml
+   sudo kubectl create -f configuracao_servicos.yaml
    ```  
 
 4. **Para acessar a página web basta utilizar o endereço `localhost:9966`**  

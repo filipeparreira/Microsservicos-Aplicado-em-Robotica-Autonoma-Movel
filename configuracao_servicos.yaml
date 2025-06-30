@@ -1,6 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: filipe-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filipe-api
+  template:
+    metadata:
+      labels:
+        app: filipe-api
+    spec:
+        containers:
+          - name: api
+            image: filipeparreira/osrm-sul:api
+            ports:
+              - containerPort: 6000
+            env:
+              - name: OSRM_API_IP
+                value: "136.248.116.239"
+              - name: OVERPASS_API_IP
+                value: "136.248.116.239"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: osrm-frontend
 spec:
   replicas: 1
@@ -14,7 +40,7 @@ spec:
     spec:
       containers:
         - name: osrm-sul
-          image: filipeparreira/osrm-sul:frontv8
+          image: filipeparreira/osrm-sul:front
           ports:
             - containerPort: 9966
 ---
@@ -64,3 +90,17 @@ spec:
       port: 5000
       targetPort: 5000
   type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: filipe-api-service
+spec:
+  selector:
+    app: filipe-api
+  ports:
+    - protocol: TCP
+      port: 6000
+      targetPort: 6000
+  type: LoadBalancer
+---
